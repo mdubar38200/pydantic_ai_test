@@ -26,6 +26,14 @@ from pydantic_ai_test import User
 print(User(id=1, email="a@example.com", name="Alice"))
 ```
 
+### Exemple pydantic-ai
+
+```python
+from pydantic_ai_test import create_echo_agent
+agent = create_echo_agent()
+print(agent.run("Salut"))
+```
+
 ## Qualité
 
 ```bash

@@ -12,7 +12,10 @@ license = {text = "MIT"}
 requires-python = ">=3.12"  # 3.13 ciblé mais fallback 3.12 dans l'environnement
 dependencies = [
   "pydantic[email]>=2.7",
-  "pydantic-ai>=0.0.10"  # ajuster à la version souhaitée
+  "pydantic-ai>=0.0.10",  # ajuster à la version souhaitée
+  "pydantic-settings>=2.5",
+  "pydantic-extra-types>=2.7",
+  "phonenumbers>=8.13"
 ]
 
 [project.optional-dependencies]
