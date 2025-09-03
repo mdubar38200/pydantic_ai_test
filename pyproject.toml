@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pydantic-ai-test"
+version = "0.1.0"
+description = "Exemple projet Python 3.13 avec Pydantic et pydantic-ai"
+authors = [{name="Votre Nom", email="you@example.com"}]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.12"  # 3.13 ciblé mais fallback 3.12 dans l'environnement
+dependencies = [
+  "pydantic[email]>=2.7",
+  "pydantic-ai>=0.0.10"  # ajuster à la version souhaitée
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "mypy>=1.10",
+  "ruff>=0.5",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+addopts = "-q"
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+packages = ["pydantic_ai_test"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+select = ["E", "F", "I", "UP", "B", "SIM", "PL"]
+
